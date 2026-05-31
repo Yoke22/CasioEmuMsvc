@@ -77,6 +77,9 @@ file(GLOB MAIN_SOURCES_PERIPHERAL_CC "${CMAKE_CURRENT_SOURCE_DIR}/Peripheral/*.c
 file(GLOB MAIN_SOURCES_PERIPHERAL_H "${CMAKE_CURRENT_SOURCE_DIR}/Peripheral/*.h")
 file(GLOB MAIN_SOURCES_PLUGIN "${CMAKE_CURRENT_SOURCE_DIR}/Plugin/*.cpp")
 file(GLOB MAIN_SOURCES_STARTUP "${CMAKE_CURRENT_SOURCE_DIR}/StartupUi/*.cpp")
+file(GLOB MAIN_SOURCES_CHIPSET_C "${CMAKE_CURRENT_SOURCE_DIR}/Chipset/*.c")      # Thêm dòng này
+file(GLOB MAIN_SOURCES_PERIPHERAL_C "${CMAKE_CURRENT_SOURCE_DIR}/Peripheral/*.c") # Thêm dòng này
+file(GLOB MAIN_SOURCES_PLUGIN_C "${CMAKE_CURRENT_SOURCE_DIR}/Plugin/*.c")         # Thêm dòng này
 
 set(MAIN_SOURCES
     ${MAIN_SOURCES_ROOT}
@@ -96,6 +99,9 @@ set(MAIN_SOURCES
     ${MAIN_SOURCES_PERIPHERAL_H}
     ${MAIN_SOURCES_PLUGIN}
     ${MAIN_SOURCES_STARTUP}
+    ${MAIN_SOURCES_CHIPSET_C}
+    ${MAIN_SOURCES_PLUGIN_C}
+    ${MAIN_SOURCES_PERIPHERAL_C}
 )
 
 # target_sources(main PRIVATE ${MAIN_SOURCES})
@@ -173,6 +179,7 @@ else()
     )
     if(ANDROID)
         target_link_libraries(${TARGET_NAME} PRIVATE log)
+        target_link_options(${TARGET_NAME} PRIVATE "-Wl,--error-limit=0")
     endif()
 endif()
 
