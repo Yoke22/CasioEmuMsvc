@@ -1523,22 +1523,11 @@ n为行扫描计数，[0xF03B] = ( ( n / ( [0xF036] == 0 ? 64 : [0xF035] ) ) % 2
 	template class Screen<HW_EPS6800>;
 
 	// Ép định nghĩa các biến tĩnh cho TẤT CẢ các dòng máy để chặn lỗi Linker
-	template const int Screen<HW_FX_5800P>::N_ROW;
-	template const int Screen<HW_FX_5800P>::ROW_SIZE;
-
-	template const int Screen<HW_ES_PLUS>::N_ROW;
-	template const int Screen<HW_ES_PLUS>::ROW_SIZE;
-
-	template const int Screen<HW_CLASSWIZ>::N_ROW;
-	template const int Screen<HW_CLASSWIZ>::ROW_SIZE;
-
-	template const int Screen<HW_CLASSWIZ_II>::N_ROW;
-	template const int Screen<HW_CLASSWIZ_II>::ROW_SIZE;
-
-	template const int Screen<HW_TI>::N_ROW;
-	template const int Screen<HW_TI>::ROW_SIZE;
-
-	template const int Screen<HW_EPS6800>::N_ROW;
-	template const int Screen<HW_EPS6800>::ROW_SIZE;
+    template const Screen<HW_FX_5800P>::SpriteBitmap Screen<HW_FX_5800P>::sprite_bitmap[];
+	template const Screen<HW_ES_PLUS>::SpriteBitmap Screen<HW_ES_PLUS>::sprite_bitmap[];
+	template const Screen<HW_CLASSWIZ>::SpriteBitmap Screen<HW_CLASSWIZ>::sprite_bitmap[];
+	template const Screen<HW_CLASSWIZ_II>::SpriteBitmap Screen<HW_CLASSWIZ_II>::sprite_bitmap[];
+	template const Screen<HW_TI>::SpriteBitmap Screen<HW_TI>::sprite_bitmap[];
+	template const Screen<HW_EPS6800>::SpriteBitmap Screen<HW_EPS6800>::sprite_bitmap[];
 
 } // namespace casioemu
