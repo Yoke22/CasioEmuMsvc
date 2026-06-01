@@ -129,7 +129,7 @@ void gui_loop() {
 	//	}
 	// #endif
 
-#ifdef SINGLE_WINDOW
+#if defined(SINGLE_WINDOW) || defined(__ANDROID__)
 	ImGui::SetNextWindowBgAlpha(0.0f);
 	ImGui::Begin("Overlay", nullptr,
 		ImGuiWindowFlags_NoDecoration |
@@ -309,5 +309,3 @@ void gui_cleanup() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
-
-#endif
