@@ -14,7 +14,7 @@ private:
 
 public:
     FPSManager() {
-        targetFrameTimeMs = 33; // Khóa cứng 30 FPS
+        targetFrameTimeMs = 30; // Khóa cứng 30 FPS
         lastFrameTime = std::chrono::high_resolution_clock::now();
         lastFrameHash = 0;
     }
