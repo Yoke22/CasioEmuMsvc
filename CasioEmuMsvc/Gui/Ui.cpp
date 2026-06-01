@@ -310,5 +310,3 @@ void gui_cleanup() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
-
-#endif
