@@ -297,7 +297,7 @@ CodeViewer* test_gui(bool* guiCreated, SDL_Window* wnd, SDL_Renderer* rnd) {
 	}
 #endif
 
-	return 0;0
+	return 0;
 }
 
 void gui_cleanup() {
@@ -309,3 +309,5 @@ void gui_cleanup() {
 	SDL_DestroyWindow(window);
 	SDL_Quit();
 }
+
+#endif
