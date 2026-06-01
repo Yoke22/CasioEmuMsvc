@@ -1515,15 +1515,14 @@ n为行扫描计数，[0xF03B] = ( ( n / ( [0xF036] == 0 ? 64 : [0xF035] ) ) % 2
 		std::abort();
 	}
     // Ép sinh các hàm thành viên cho các dòng phần cứng
-	template class Screen<HW_FX_5800P>;
+template class Screen<HW_FX_5800P>;
 	template class Screen<HW_ES_PLUS>;
 	template class Screen<HW_CLASSWIZ>;
 	template class Screen<HW_CLASSWIZ_II>;
 	template class Screen<HW_TI>;
 	template class Screen<HW_EPS6800>;
 
-	// Ép định nghĩa các biến tĩnh cho TẤT CẢ các dòng máy để chặn lỗi Linker
-    template const Screen<HW_FX_5800P>::SpriteBitmap Screen<HW_FX_5800P>::sprite_bitmap[];
+	template const Screen<HW_FX_5800P>::SpriteBitmap Screen<HW_FX_5800P>::sprite_bitmap[];
 	template const Screen<HW_ES_PLUS>::SpriteBitmap Screen<HW_ES_PLUS>::sprite_bitmap[];
 	template const Screen<HW_CLASSWIZ>::SpriteBitmap Screen<HW_CLASSWIZ>::sprite_bitmap[];
 	template const Screen<HW_CLASSWIZ_II>::SpriteBitmap Screen<HW_CLASSWIZ_II>::sprite_bitmap[];
