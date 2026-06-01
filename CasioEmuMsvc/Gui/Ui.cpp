@@ -204,6 +204,7 @@ void gui_loop() {
 	// Khóa cứng tốc độ ở 30 FPS
 	fps.limit();
 }
+#endif
 
 CodeViewer* test_gui(bool* guiCreated, SDL_Window* wnd, SDL_Renderer* rnd) {
 	SDL_SetHint(SDL_HINT_IME_SHOW_UI, "1");
