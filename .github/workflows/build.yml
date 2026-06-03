@@ -131,7 +131,7 @@ jobs:
     name: Create Release
     needs: build
     runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref == 'refs/heads/stable'
+    if: (github.event_name == 'push' && github.ref == 'refs/heads/stable') || github.event_name == 'workflow_dispatch'
 
     steps:
     - name: Checkout
