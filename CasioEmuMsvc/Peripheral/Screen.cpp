@@ -1514,14 +1514,48 @@ n为行扫描计数，[0xF03B] = ( ( n / ( [0xF036] == 0 ? 64 : [0xF035] ) ) % 2
 		}
 		std::abort();
 	}
-    // Ép sinh các hàm thành viên cho các dòng phần cứng
-    template class Screen<HW_FX_5800P>;
+    // =================================================================
+	// ĐỊNH NGHĨA CHUYÊN BIỆT (SPECIALIZATION) CHO DÒNG MÁY HW_FX_5800P (MÃ 6)
+	// =================================================================
+	template <>
+	const int Screen<HW_FX_5800P>::N_ROW = 31;
+	template <>
+	const int Screen<HW_FX_5800P>::ROW_SIZE = 16;
+	template <>
+	const int Screen<HW_FX_5800P>::OFFSET = 16;
+	template <>
+	const int Screen<HW_FX_5800P>::ROW_SIZE_DISP = 12;
+	template <>
+	const int Screen<HW_FX_5800P>::SPR_MAX = 19;
+
+	template <>
+	const SpriteBitmap Screen<HW_FX_5800P>::sprite_bitmap[] = {
+		{"rsd_pixel", 0, 0},
+		{"rsd_s", 0x10, 0x00},
+		{"rsd_a", 0x04, 0x00},
+		{"rsd_m", 0x10, 0x01},
+		{"rsd_sto", 0x02, 0x01},
+		{"rsd_rcl", 0x40, 0x02},
+		{"rsd_stat", 0x40, 0x03},
+		{"rsd_cmplx", 0x80, 0x04},
+		{"rsd_mat", 0x40, 0x05},
+		{"rsd_vct", 0x01, 0x05},
+		{"rsd_d", 0x20, 0x07},
+		{"rsd_r", 0x02, 0x07},
+		{"rsd_g", 0x10, 0x08},
+		{"rsd_fix", 0x01, 0x08},
+		{"rsd_sci", 0x20, 0x09},
+		{"rsd_math", 0x40, 0x0A},
+		{"rsd_down", 0x08, 0x0A},
+		{"rsd_up", 0x80, 0x0B},
+		{"rsd_disp", 0x10, 0x0B} };
+
+	// Khởi tạo hàm thành viên tương ứng cho tất cả các dòng máy
+	template class Screen<HW_FX_5800P>;
 	template class Screen<HW_ES_PLUS>;
 	template class Screen<HW_CLASSWIZ>;
 	template class Screen<HW_CLASSWIZ_II>;
 	template class Screen<HW_TI>;
 	template class Screen<HW_EPS6800>;
-    template class casioemu::Screen<casioemu::HW_FX_5800P>;
-    template const typename casioemu::Screen<casioemu::HW_FX_5800P>::SpriteBitmap casioemu::Screen<casioemu::HW_FX_5800P>::sprite_bitmap[];
 
 } // namespace casioemu
