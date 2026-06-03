@@ -1521,5 +1521,7 @@ n为行扫描计数，[0xF03B] = ( ( n / ( [0xF036] == 0 ? 64 : [0xF035] ) ) % 2
 	template class Screen<HW_CLASSWIZ_II>;
 	template class Screen<HW_TI>;
 	template class Screen<HW_EPS6800>;
+    template class casioemu::Screen<casioemu::HW_FX_5800P>;
+    template const typename casioemu::Screen<casioemu::HW_FX_5800P>::SpriteBitmap casioemu::Screen<casioemu::HW_FX_5800P>::sprite_bitmap[];
 
 } // namespace casioemu
